@@ -102,23 +102,23 @@ namespace PasswordCrackerCentralized
             IEnumerable<UserInfoClearText> partialResultReverse = CheckSingleWord(userInfos, possiblePasswordReverse, _messageDigest);
             result.AddRange(partialResultReverse);
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 13; i++)
             {
                 String possiblePasswordEndDigit = dictionaryEntry + i;
                 IEnumerable<UserInfoClearText> partialResultEndDigit = CheckSingleWord(userInfos, possiblePasswordEndDigit, _messageDigest);
                 result.AddRange(partialResultEndDigit);
             }
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 13; i++)
             {
                 String possiblePasswordStartDigit = i + dictionaryEntry;
                 IEnumerable<UserInfoClearText> partialResultStartDigit = CheckSingleWord(userInfos, possiblePasswordStartDigit, _messageDigest);
                 result.AddRange(partialResultStartDigit);
             }
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 3; i++)
             {
-                for (int j = 0; j < 10; j++)
+                for (int j = 0; j < 3; j++)
                 {
                     String possiblePasswordStartEndDigit = i + dictionaryEntry + j;
                     IEnumerable<UserInfoClearText> partialResultStartEndDigit = CheckSingleWord(userInfos, possiblePasswordStartEndDigit, _messageDigest);
